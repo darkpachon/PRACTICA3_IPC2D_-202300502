@@ -1,0 +1,31 @@
+{% extends "inventory_client/base.html" %}
+{% block content %}
+<h2>Lista de productos</h2>
+{% if productos %}
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th><th>Categoría</th><th>Precio</th><th>Cantidad</th><th>Vencimiento</th><th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in productos %}
+    <tr>
+      <td>{{ p.nombre }}</td>
+      <td>{{ p.categoria }}</td>
+      <td>{{ p.precio }}</td>
+      <td>{{ p.cantidad }}</td>
+      <td>{{ p.fecha_vencimiento }}</td>
+      <td>
+        <a href="{% url 'inventory_client:product_detail' p.id %}">Ver</a> |
+        <a href="{% url 'inventory_client:product_edit' p.id %}">Editar</a> |
+        <a href="{% url 'inventory_client:product_delete' p.id %}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p>No hay productos o no se pudo obtener la lista.</p>
+{% endif %}
+{% endblock %}

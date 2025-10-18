@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Inventario - Supermercado</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Inventario</h1>
+    <nav>
+      <a href="{% url 'inventory_client:product_list' %}">Productos</a> |
+      <a href="{% url 'inventory_client:product_create' %}">Crear producto</a>
+    </nav>
+    <hr>
+  </header>
+
+  {% if messages %}
+  <ul>
+    {% for m in messages %}
+      <li{% if m.tags %} class="{{ m.tags }}"{% endif %}>{{ m }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <hr>
+    <small>Aplicación de práctica - Django consume API Flask</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "inventory_client/base.html" %}
+{% block content %}
+<h2>{{ p.nombre }}</h2>
+<ul>
+  <li><strong>Categoría:</strong> {{ p.categoria }}</li>
+  <li><strong>Descripción:</strong> {{ p.descripcion }}</li>
+  <li><strong>Precio:</strong> {{ p.precio }}</li>
+  <li><strong>Cantidad:</strong> {{ p.cantidad }}</li>
+  <li><strong>Vencimiento:</strong> {{ p.fecha_vencimiento }}</li>
+</ul>
+<p>
+  <a href="{% url 'inventory_client:product_edit' p.id %}">Editar</a> |
+  <a href="{% url 'inventory_client:product_delete' p.id %}">Eliminar</a> |
+  <a href="{% url 'inventory_client:product_list' %}">Volver</a>
+</p>
+{% endblock %}

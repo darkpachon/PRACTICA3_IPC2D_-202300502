@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "nombre": "Leche Entera 1L",
+    "categoria": "Lácteos",
+    "descripcion": "Leche entera pasteurizada",
+    "precio": 1.25,
+    "cantidad": 30,
+    "fecha_vencimiento": "2025-11-20"
+  },
+  {
+    "id": "2",
+    "nombre": "Pan de Molde",
+    "categoria": "Panadería",
+    "descripcion": "Pan de molde integral",
+    "precio": 1.0,
+    "cantidad": 15,
+    "fecha_vencimiento": "2025-10-25"
+  }
+]

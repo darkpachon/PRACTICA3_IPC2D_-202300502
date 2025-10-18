@@ -1,0 +1,11 @@
+{% extends "inventory_client/base.html" %}
+{% block content %}
+<h2>{{ action }} producto</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">{{ action }}</button>
+  <a href="{% url 'inventory_client:product_list' %}">Cancelar</a>
+</form>
+{% endblock %}
